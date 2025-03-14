@@ -21,14 +21,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/SP-Packages/copyrc.git"
+    "url": "git+https://github.com/SP-Packages/copyrc.git"
   },
   "files": [
     "dist",
     "README.md"
   ],
+  "exports": {
+    "import": "./dist/core/copyrc.js",
+    "types": "./dist/core/copyrc.d.ts"
+  },
   "bin": {
-    "copyrc": "./dist/bin/copyrc.js"
+    "copyrc": "dist/bin/copyrc.js"
   },
   "publishConfig": {
     "access": "public"
