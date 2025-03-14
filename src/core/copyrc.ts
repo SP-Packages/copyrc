@@ -1,6 +1,6 @@
 import { Config } from "../types/config.js";
 import { copyTemplateFile } from "./helper.js";
-import { printInfo, printError, printSuccess } from "./logger.js";
+import { Printer } from "./logger.js";
 
 /**
  * Copy all files from the source to the destination as specified in the config.
@@ -10,7 +10,7 @@ import { printInfo, printError, printSuccess } from "./logger.js";
  */
 export function copyrc(config: Config, verbose: boolean) {
   if (verbose) {
-    printInfo("Running copyrc with verbose mode enabled...");
+    Printer.info("Running copyrc with verbose mode enabled...");
   }
 
   let allSuccess = true;
@@ -23,8 +23,8 @@ export function copyrc(config: Config, verbose: boolean) {
   }
 
   if (allSuccess) {
-    printSuccess("All required files are copied or already exist.");
+    Printer.success("All required files are copied or already exist.");
   } else {
-    printError("Some files failed to copy.");
+    Printer.error("Some files failed to copy.");
   }
 }

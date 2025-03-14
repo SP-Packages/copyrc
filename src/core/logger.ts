@@ -1,2 +1,2 @@
-import { printInfo, printSuccess, printError, printWarning } from "@sp-packages/printer";
-export { printInfo, printSuccess, printError, printWarning };
+import { Printer } from "@sp-packages/printer";
+export { Printer };
