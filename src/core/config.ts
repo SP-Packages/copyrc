@@ -1,35 +1,56 @@
 import fs from "fs";
 import path from "path";
+import { createInterface } from "readline";
 import { Config } from "../types/config.js";
-import { Printer } from "./logger.js";
+import { Printer } from "../utils/logger.js";
+import { existsSync, writeFileSync } from "fs";
+import { DEFAULT_CONFIG } from "../constants.js";
 
 /**
- * Read the configuration file from the given path.
- * If no path is provided, it will look for a copyrc.config.json in the current directory.
- * @param configPath - Path to the configuration file
- * @returns The configuration object
+ * Asynchronously ask a question in the console.
+ * @param query - The question to ask
+ * @returns The user's answer
  */
-export function readConfig(configPath?: string): Config {
-  const defaultConfigFile = "copyrc.config.json";
-  const resolvedPath = configPath ? path.resolve(configPath) : path.resolve(defaultConfigFile);
+function askQuestion(query: string): Promise<string> {
+  const rl = createInterface({ input: process.stdin, output: process.stdout });
+  return new Promise((resolve) =>
+    rl.question(query, (answer) => {
+      rl.close();
+      resolve(answer.trim().toLowerCase());
+    }),
+  );
+}
 
-  if (!fs.existsSync(resolvedPath)) {
-    Printer.error(`Configuration file not found: ${resolvedPath}`);
-    Printer.info(
+/**
+ * Reads the configuration file and returns the parsed configuration object.
+ * @param configPath - The path to the configuration file.
+ * @returns The parsed configuration object.
+ */
+export async function readConfig(configPath?: string): Promise<Config> {
+  const defaultConfigFile = ".copyrc.json";
+  let resolvedPath = configPath ? path.resolve(configPath) : path.resolve(defaultConfigFile);
+
+  if (!existsSync(resolvedPath)) {
+    Printer.error(`Config file not found at: ${resolvedPath}`);
+    Printer.error(
       `Please create a "${defaultConfigFile}" or specify a config file with --config <path>`,
     );
-    process.exit(1);
+    const response = await askQuestion(
+      `Generate a default ${defaultConfigFile} and proceed? (y/n) `,
+    );
+    if (response === "y") {
+      writeFileSync(defaultConfigFile, JSON.stringify(DEFAULT_CONFIG));
+      resolvedPath = path.resolve(defaultConfigFile);
+    } else {
+      process.exit(1);
+    }
   }
 
   try {
     const configData = fs.readFileSync(resolvedPath, "utf-8");
     return JSON.parse(configData);
   } catch (error: unknown) {
-    if (error instanceof Error) {
-      Printer.error(`Error reading config file: ${resolvedPath}`, error);
-    } else {
-      Printer.error(`Error reading config file: ${resolvedPath}`);
-    }
+    Printer.error(`Error reading config file: ${resolvedPath}`, error);
     process.exit(1);
   }
 }

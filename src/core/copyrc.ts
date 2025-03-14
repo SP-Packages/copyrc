@@ -1,6 +1,6 @@
 import { Config } from "../types/config.js";
-import { copyTemplateFile } from "./helper.js";
-import { Printer } from "./logger.js";
+import { copyTemplateFile } from "../utils/helper.js";
+import { Printer } from "../utils/logger.js";
 
 /**
  * Copy all files from the source to the destination as specified in the config.

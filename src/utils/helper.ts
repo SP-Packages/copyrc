@@ -29,8 +29,8 @@ export function copyTemplateFile(source: string, destination: string): boolean {
     fs.copyFileSync(source, destination);
     Printer.success(`${source} copied successfully to ${destination}`);
     return true;
-  } catch (error) {
-    Printer.error(`Failed to copy ${source} to ${destination}:`, error as Error);
+  } catch (error: unknown) {
+    Printer.error(`Failed to copy ${source} to ${destination}:`, error);
     return false;
   }
 }
