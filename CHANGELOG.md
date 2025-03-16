@@ -1,3 +1,13 @@
+## [2.1.0](https://github.com/SP-Packages/copyrc/compare/v2.0.0...v2.1.0) (2025-03-16)
+
+### Features
+
+* **linting:** add lintrc and markdownlint configuration files ([4a9b4ef](https://github.com/SP-Packages/copyrc/commit/4a9b4efe04bb6a960f952fe5889618fbd2fdcba4))
+
+### Bug Fixes
+
+* **readme:** update badge links for improved readability ([b9d55ee](https://github.com/SP-Packages/copyrc/commit/b9d55eee47109827189e693b6d7b1753a9c783b3))
+
 ## [2.0.0](https://github.com/SP-Packages/copyrc/compare/v1.0.0...v2.0.0) (2025-03-14)
 
 ### ⚠ BREAKING CHANGES
