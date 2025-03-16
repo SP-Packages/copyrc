@@ -7,3 +7,9 @@ commitlint
 conventionalcommits
 lando
 carryforward
+depkit
+lintrc
+phpcbf
+phpcs
+phpstan
+phpcsfixer
