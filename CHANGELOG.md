@@ -1,3 +1,9 @@
+## [2.2.0](https://github.com/SP-Packages/copyrc/compare/v2.1.0...v2.2.0) (2025-03-28)
+
+### Features
+
+* **makefile:** add Makefile with help, start, dep, and lint targets ([6679e04](https://github.com/SP-Packages/copyrc/commit/6679e049e8fd33c5adcaf86fc25f74c196203d78))
+
 ## [2.1.0](https://github.com/SP-Packages/copyrc/compare/v2.0.0...v2.1.0) (2025-03-16)
 
 ### Features
