@@ -25,7 +25,7 @@ program
     }
 
     const config = await readConfig(options.config);
-    copyrc(config, options.verbose);
+    copyrc(config);
   });
 
 program.parse(process.argv);

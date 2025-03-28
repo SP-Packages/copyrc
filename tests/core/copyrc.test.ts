@@ -27,26 +27,21 @@ describe("copyrc", () => {
     vi.clearAllMocks();
   });
 
-  it("should print info message if verbose is enabled", () => {
-    copyrc(config, true);
-    expect(Printer.info).toHaveBeenCalledWith("Running copyrc with verbose mode enabled...");
-  });
-
   it("should copy all files specified in the config", () => {
     (copyTemplateFile as Mock).mockReturnValue(true);
-    copyrc(config, false);
+    copyrc(config);
     expect(copyTemplateFile).toHaveBeenCalledTimes(config.files.length);
   });
 
   it("should print success message if all files are copied successfully", () => {
     (copyTemplateFile as Mock).mockReturnValue(true);
-    copyrc(config, false);
+    copyrc(config);
     expect(Printer.success).toHaveBeenCalledWith("All required files are copied or already exist.");
   });
 
   it("should print error message if some files failed to copy", () => {
     (copyTemplateFile as Mock).mockReturnValueOnce(true).mockReturnValueOnce(false);
-    copyrc(config, false);
+    copyrc(config);
     expect(Printer.error).toHaveBeenCalledWith("Some files failed to copy.");
   });
 });
