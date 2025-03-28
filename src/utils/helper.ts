@@ -21,13 +21,13 @@ export function copyTemplateFile(source: string, destination: string): boolean {
   }
 
   if (fs.existsSync(destination)) {
-    Printer.warning(`Destination file already exists at ${destination}. Skipping.`);
+    Printer.log(`Destination file already exists at ${destination}. Skipping.`, "warning");
     return true;
   }
 
   try {
     fs.copyFileSync(source, destination);
-    Printer.success(`${source} copied successfully to ${destination}`);
+    Printer.log(`${source} copied successfully to ${destination}`, "success");
     return true;
   } catch (error: unknown) {
     Printer.error(`Failed to copy ${source} to ${destination}:`, error);
