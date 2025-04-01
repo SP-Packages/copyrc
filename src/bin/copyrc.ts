@@ -13,7 +13,7 @@ program
   .description(
     "A lightweight CLI tool to automate copying template files during project setup or runtime.",
   )
-  .option("-c, --config <path>", "Specify config file (default: .copyrc.json)")
+  .option("-c, --config <path>", "Specify config file (default: copyrc.json)")
   .option("-q, --quiet", "Disable output")
   .option("-v, --verbose", "Enable verbose logging")
   .action(async (options) => {

@@ -19,7 +19,7 @@
 - 📂 Copies template files to designated locations
 - 🔄 Skips existing files to prevent overwrites
 - ⚡ Works with **any project type** (WordPress, Node.js, PHP, etc.)
-- 🔧 Fully configurable via `.copyrc.json`
+- 🔧 Fully configurable via `copyrc.json`
 - 🛠️ Can be integrated into CI/CD, Lando, and other automation workflows
 - 📜 Supports **programmatic usage** in Node.js projects
 
@@ -45,9 +45,9 @@ Then, run it via:
 npx copyrc
 ```
 
-## **⚙️ Configuration (`.copyrc.json`)**
+## **⚙️ Configuration (`copyrc.json`)**
 
-Running the `copyrc` command will allow you to automatically create the `.copyrc.json` file. Alternatively, you can manually create a `.copyrc.json` in your project root or a custom configuration file and pass it using the `-c` or `--config` parameter:
+Running the `copyrc` command will allow you to automatically create the `copyrc.json` file. Alternatively, you can manually create a `copyrc.json` or `.copyrc.json` in your project root or a custom configuration file and pass it using the `-c` or `--config` parameter:
 
 ```json
 {
@@ -65,7 +65,7 @@ Running the `copyrc` command will allow you to automatically create the `.copyrc
 }
 ```
 
-If no --config option is provided, copyrc will look for .copyrc.json in the project root by default.
+If no --config option is provided, copyrc will look for `copyrc.json` or `.copyrc.json` in the project root by default.
 
 ## **🚀 CLI Usage**
 
@@ -75,7 +75,7 @@ If no --config option is provided, copyrc will look for .copyrc.json in the proj
 copyrc
 ```
 
-This will use `.copyrc.json` from the project root.
+This will use `copyrc.json` or `.copyrc.json` from the project root.
 
 ### **Custom Config File Path**
 
@@ -119,7 +119,7 @@ Create a script `setup.js`:
 import { copyrc } from "@sp-packages/copyrc";
 import fs from "fs";
 
-const configPath = "./.copyrc.json";
+const configPath = "./copyrc.json";
 
 if (fs.existsSync(configPath)) {
   const config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
