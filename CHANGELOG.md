@@ -1,3 +1,16 @@
+## [2.3.0](https://github.com/SP-Packages/copyrc/compare/v2.2.0...v2.3.0) (2025-04-01)
+
+### Features
+
+* **dependencies:** update dependencies and configurations ([9ab61e0](https://github.com/SP-Packages/copyrc/commit/9ab61e0e08da4f0a2074fc2abd5029c177858acd))
+* **funding:** add custom funding link for PayPal support ([faa035b](https://github.com/SP-Packages/copyrc/commit/faa035ba57dcd0aad1613204cf5b6c9e678e4093))
+* **labeler:** enhance labeler configuration for various file types ([6696810](https://github.com/SP-Packages/copyrc/commit/6696810d4577bfa5e6d520782a1c8d2c77036243))
+* **workflows:** update workflow actions and permissions for consistency ([0a66962](https://github.com/SP-Packages/copyrc/commit/0a66962922f27b14cff1d6b046f59e3326d4a354))
+
+### Bug Fixes
+
+* **readme, config:** update configuration file name to copyrc.json ([c1a11ae](https://github.com/SP-Packages/copyrc/commit/c1a11ae1d59e19dfc40b993fd3fd6503f25d4336))
+
 ## [2.2.0](https://github.com/SP-Packages/copyrc/compare/v2.1.0...v2.2.0) (2025-03-28)
 
 ### Features
