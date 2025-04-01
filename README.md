@@ -1,19 +1,17 @@
 # **CopyRC**
 
 <p align="center"><i>A lightweight CLI tool to automate copying template files during project setup or runtime.</i></p>
-
 <p align="center">
-  <img src="https://img.shields.io/npm/v/@sp-packages/copyrc" alt="npm version">
-  <a href="https://packagephobia.com/result?p=@sp-packages/copyrc"><img src="https://packagephobia.com/badge?p=@sp-packages/copyrc" alt="install size"></a>
-  <img src="https://img.shields.io/npm/dw/@sp-packages/copyrc" alt="npm downloads">
-  <img src="https://img.shields.io/npm/l/@sp-packages/copyrc" alt="license">
-  <img src="https://github.com/SP-Packages/copyrc/actions/workflows/release.yml/badge.svg" alt="build status">
+  <a href="https://www.npmjs.com/package/@sp-packages/copyrc"><img src="https://img.shields.io/npm/v/@sp-packages/copyrc" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/@sp-packages/copyrc"><img src="https://img.shields.io/npm/dw/@sp-packages/copyrc" alt="npm downloads"></a>
+  <a href="https://github.com/SP-Packages/copyrc/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@sp-packages/copyrc" alt="license"></a>
+  <a href="https://github.com/SP-Packages/copyrc/actions/workflows/release.yml"><img src="https://github.com/SP-Packages/copyrc/actions/workflows/release.yml/badge.svg" alt="build status"></a>
   <a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/semantic--release-conventionalcommits-e10079?logo=semantic-release" alt="semantic-release"></a>
-  <img src="https://img.shields.io/badge/Made%20with-TypeScript-blue.svg" alt="TypeScript">
-  <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="Prettier">
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/Made%20with-TypeScript-blue.svg" alt="TypeScript"></a>
+  <a href="https://prettier.io/"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="Prettier"></a>
   <a href="https://codecov.io/gh/SP-Packages/copyrc"><img src="https://codecov.io/gh/SP-Packages/copyrc/graph/badge.svg?token=60X95UNTQL" alt="codecov"></a>
-  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome">
-   <a href="https://github.com/sponsors/iamsenthilprabu"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?logo=github" alt="Sponsor"></a>
+  <a href="https://github.com/SP-Packages/copyrc/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome"></a>
+  <a href="https://github.com/sponsors/iamsenthilprabu"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?logo=github" alt="Sponsor"></a>
 </p>
 
 ## **✨ Features**
@@ -21,7 +19,7 @@
 - 📂 Copies template files to designated locations
 - 🔄 Skips existing files to prevent overwrites
 - ⚡ Works with **any project type** (WordPress, Node.js, PHP, etc.)
-- 🔧 Fully configurable via `.copyrc.json`
+- 🔧 Fully configurable via `copyrc.json`
 - 🛠️ Can be integrated into CI/CD, Lando, and other automation workflows
 - 📜 Supports **programmatic usage** in Node.js projects
 
@@ -47,9 +45,9 @@ Then, run it via:
 npx copyrc
 ```
 
-## **⚙️ Configuration (`.copyrc.json`)**
+## **⚙️ Configuration (`copyrc.json`)**
 
-Running the `copyrc` command will allow you to automatically create the `.copyrc.json` file. Alternatively, you can manually create a `.copyrc.json` in your project root or a custom configuration file and pass it using the `-c` or `--config` parameter:
+Running the `copyrc` command will allow you to automatically create the `copyrc.json` file. Alternatively, you can manually create a `copyrc.json` or `.copyrc.json` in your project root or a custom configuration file and pass it using the `-c` or `--config` parameter:
 
 ```json
 {
@@ -67,7 +65,7 @@ Running the `copyrc` command will allow you to automatically create the `.copyrc
 }
 ```
 
-If no --config option is provided, copyrc will look for .copyrc.json in the project root by default.
+If no --config option is provided, copyrc will look for `copyrc.json` or `.copyrc.json` in the project root by default.
 
 ## **🚀 CLI Usage**
 
@@ -77,7 +75,7 @@ If no --config option is provided, copyrc will look for .copyrc.json in the proj
 copyrc
 ```
 
-This will use `.copyrc.json` from the project root.
+This will use `copyrc.json` or `.copyrc.json` from the project root.
 
 ### **Custom Config File Path**
 
@@ -121,7 +119,7 @@ Create a script `setup.js`:
 import { copyrc } from "@sp-packages/copyrc";
 import fs from "fs";
 
-const configPath = "./.copyrc.json";
+const configPath = "./copyrc.json";
 
 if (fs.existsSync(configPath)) {
   const config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
