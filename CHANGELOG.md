@@ -1,3 +1,11 @@
+## [2.3.1](https://github.com/SP-Packages/copyrc/compare/v2.3.0...v2.3.1) (2025-05-22)
+
+### Bug Fixes
+
+* **dependabot:** change update schedule from daily to weekly ([1845063](https://github.com/SP-Packages/copyrc/commit/18450636d751d73e60595e1f66c118049339a68f))
+* **dependencies:** update dependencies ([bddc4b6](https://github.com/SP-Packages/copyrc/commit/bddc4b65d3fa8aff1a424e980ab976ab6bad417f))
+* **workflows:** update workflow actions to latest versions ([a576945](https://github.com/SP-Packages/copyrc/commit/a57694544abad5e381aaa2294ea8a6e116d3d2cd))
+
 ## [2.3.0](https://github.com/SP-Packages/copyrc/compare/v2.2.0...v2.3.0) (2025-04-01)
 
 ### Features
