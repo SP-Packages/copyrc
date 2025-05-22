@@ -1,3 +1,9 @@
+## [2.3.2](https://github.com/SP-Packages/copyrc/compare/v2.3.1...v2.3.2) (2025-05-22)
+
+### Bug Fixes
+
+* **dependencies:** update dependencies ([6bfd2e1](https://github.com/SP-Packages/copyrc/commit/6bfd2e1da0a7037a8ad50e9e0e807655693a1a78))
+
 ## [2.3.1](https://github.com/SP-Packages/copyrc/compare/v2.3.0...v2.3.1) (2025-05-22)
 
 ### Bug Fixes
