@@ -1,6 +1,6 @@
-import { Config } from "../types/config.js";
-import { copyTemplateFile } from "../utils/helper.js";
-import { Printer } from "../utils/logger.js";
+import { Config } from '../types/config.js';
+import { copyTemplateFile } from '../utils/helper.js';
+import { Printer } from '../utils/logger.js';
 
 /**
  * Copy all files from the source to the destination as specified in the config.
@@ -18,8 +18,8 @@ export function copyrc(config: Config) {
   }
 
   if (allSuccess) {
-    Printer.success("All required files are copied or already exist.");
+    Printer.success('All required files are copied or already exist.');
   } else {
-    Printer.error("Some files failed to copy.");
+    Printer.error('Some files failed to copy.');
   }
 }

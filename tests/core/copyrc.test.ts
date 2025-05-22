@@ -1,47 +1,51 @@
-import { describe, it, expect, vi, beforeEach, Mock } from "vitest";
-import { copyrc } from "../../src/core/copyrc.js";
-import { copyTemplateFile } from "../../src/utils/helper.js";
-import { Printer } from "../../src/utils/logger.js";
-import { Config } from "../../src/types/config.js";
+import { describe, it, expect, vi, beforeEach, Mock } from 'vitest';
+import { copyrc } from '../../src/core/copyrc.js';
+import { copyTemplateFile } from '../../src/utils/helper.js';
+import { Printer } from '../../src/utils/logger.js';
+import { Config } from '../../src/types/config.js';
 
-vi.mock("../../src/utils/helper.js", () => ({
-  copyTemplateFile: vi.fn(),
+vi.mock('../../src/utils/helper.js', () => ({
+  copyTemplateFile: vi.fn()
 }));
-vi.mock("../../src/utils/logger.js", () => ({
+vi.mock('../../src/utils/logger.js', () => ({
   Printer: {
     info: vi.fn(),
     success: vi.fn(),
-    error: vi.fn(),
-  },
+    error: vi.fn()
+  }
 }));
 
-describe("copyrc", () => {
+describe('copyrc', () => {
   const config: Config = {
     files: [
-      { source: "source1.txt", destination: "dest1.txt" },
-      { source: "source2.txt", destination: "dest2.txt" },
-    ],
+      { source: 'source1.txt', destination: 'dest1.txt' },
+      { source: 'source2.txt', destination: 'dest2.txt' }
+    ]
   };
 
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
-  it("should copy all files specified in the config", () => {
+  it('should copy all files specified in the config', () => {
     (copyTemplateFile as Mock).mockReturnValue(true);
     copyrc(config);
     expect(copyTemplateFile).toHaveBeenCalledTimes(config.files.length);
   });
 
-  it("should print success message if all files are copied successfully", () => {
+  it('should print success message if all files are copied successfully', () => {
     (copyTemplateFile as Mock).mockReturnValue(true);
     copyrc(config);
-    expect(Printer.success).toHaveBeenCalledWith("All required files are copied or already exist.");
+    expect(Printer.success).toHaveBeenCalledWith(
+      'All required files are copied or already exist.'
+    );
   });
 
-  it("should print error message if some files failed to copy", () => {
-    (copyTemplateFile as Mock).mockReturnValueOnce(true).mockReturnValueOnce(false);
+  it('should print error message if some files failed to copy', () => {
+    (copyTemplateFile as Mock)
+      .mockReturnValueOnce(true)
+      .mockReturnValueOnce(false);
     copyrc(config);
-    expect(Printer.error).toHaveBeenCalledWith("Some files failed to copy.");
+    expect(Printer.error).toHaveBeenCalledWith('Some files failed to copy.');
   });
 });

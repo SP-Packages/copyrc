@@ -1,6 +1,6 @@
-import fs from "fs";
-import path from "path";
-import { Printer } from "./logger.js";
+import fs from 'fs';
+import path from 'path';
+import { Printer } from './logger.js';
 
 /**
  * Copy a file from the source to the destination.
@@ -21,13 +21,16 @@ export function copyTemplateFile(source: string, destination: string): boolean {
   }
 
   if (fs.existsSync(destination)) {
-    Printer.log(`Destination file already exists at ${destination}. Skipping.`, "warning");
+    Printer.log(
+      `Destination file already exists at ${destination}. Skipping.`,
+      'warning'
+    );
     return true;
   }
 
   try {
     fs.copyFileSync(source, destination);
-    Printer.log(`${source} copied successfully to ${destination}`, "success");
+    Printer.log(`${source} copied successfully to ${destination}`, 'success');
     return true;
   } catch (error: unknown) {
     Printer.error(`Failed to copy ${source} to ${destination}:`, error);

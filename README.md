@@ -96,16 +96,16 @@ You can also use `copyrc` inside your JavaScript/TypeScript projects.
 ### **Import and Run Directly**
 
 ```ts
-import { copyrc } from "@sp-packages/copyrc";
+import { copyrc } from '@sp-packages/copyrc';
 
 const config = {
   files: [
-    { source: "./templates/.env.template", destination: "./public/.env" },
+    { source: './templates/.env.template', destination: './public/.env' },
     {
-      source: "./templates/wp-config.php.template",
-      destination: "./public/wp-config.php",
-    },
-  ],
+      source: './templates/wp-config.php.template',
+      destination: './public/wp-config.php'
+    }
+  ]
 };
 
 copyrc(config, true); // The second argument enables verbose logging
@@ -116,16 +116,16 @@ copyrc(config, true); // The second argument enables verbose logging
 Create a script `setup.js`:
 
 ```ts
-import { copyrc } from "@sp-packages/copyrc";
-import fs from "fs";
+import { copyrc } from '@sp-packages/copyrc';
+import fs from 'fs';
 
-const configPath = "./copyrc.json";
+const configPath = './copyrc.json';
 
 if (fs.existsSync(configPath)) {
-  const config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
+  const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
   copyrc(config, false);
 } else {
-  console.error("❌ Config file not found!");
+  console.error('❌ Config file not found!');
 }
 ```
 
