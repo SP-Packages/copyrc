@@ -1,3 +1,9 @@
+## [2.3.3](https://github.com/SP-Packages/copyrc/compare/v2.3.2...v2.3.3) (2025-05-22)
+
+### Bug Fixes
+
+* update quotes to single quotes for consistency across files ([6b1dacb](https://github.com/SP-Packages/copyrc/commit/6b1dacbb226c1c8f276660416c0b4909a07a4318))
+
 ## [2.3.2](https://github.com/SP-Packages/copyrc/compare/v2.3.1...v2.3.2) (2025-05-22)
 
 ### Bug Fixes
