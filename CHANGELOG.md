@@ -1,3 +1,14 @@
+## [2.3.5](https://github.com/SP-Packages/copyrc/compare/v2.3.4...v2.3.5) (2025-08-22)
+
+### Bug Fixes
+
+* **dependencies:** update dependencies ([6c93b97](https://github.com/SP-Packages/copyrc/commit/6c93b97defe743f295bad2e3dc6a1aa33ef7b404))
+* **lint-staged:** enforce strict mode for lintrc command ([0e9f850](https://github.com/SP-Packages/copyrc/commit/0e9f850c8bb34d40790e68ad37d796496d834ca7))
+* **lint-staged:** enforce strict mode for lintrc command ([644278d](https://github.com/SP-Packages/copyrc/commit/644278d3764c000ddac5038033aa81bc47bb89ee))
+* **release.config:** simplify commit-analyzer config and clean up assets ([596fe63](https://github.com/SP-Packages/copyrc/commit/596fe6323b9a9a33679e6bf733dbb0ab7d983f23))
+* **scripts:** update husky command and add watch script ([179b128](https://github.com/SP-Packages/copyrc/commit/179b128e712e398db5a52e04d1d44ca89a2212e0))
+* **tools:** update behavior to warn for various composer, npm commands ([83b3d68](https://github.com/SP-Packages/copyrc/commit/83b3d689dd04ecbd517355d0ad62994bed71d08a))
+
 ## [2.3.4](https://github.com/SP-Packages/copyrc/compare/v2.3.3...v2.3.4) (2025-07-26)
 
 ### Bug Fixes
